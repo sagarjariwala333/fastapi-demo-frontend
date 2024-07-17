@@ -5,7 +5,7 @@ import TaskPage from "./modules/task/page";
 import EmployeeTaskPage from "./modules/employee_task/page";
 
 function App() {
-  const [menuState, setMenuState] = useState("");
+  const [menuState, setMenuState] = useState("employee");
 
   const handleMenu = (menu: string) => {
     setMenuState(menu);

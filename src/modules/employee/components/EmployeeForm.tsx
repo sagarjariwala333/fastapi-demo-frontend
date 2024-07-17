@@ -42,7 +42,15 @@ const EmployeeForm = (props: IPropType) => {
       component="form"
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="mt-4"
+      sx={{
+        mt: 4,
+        p: 3,
+        maxWidth: "500px",
+        mx: "auto",
+        bgcolor: "background.paper",
+        boxShadow: 3,
+        borderRadius: 2,
+      }}
     >
       <Controller
         name="name"
@@ -64,7 +72,7 @@ const EmployeeForm = (props: IPropType) => {
             margin="normal"
             error={!!errors.name}
             helperText={errors.name ? errors.name.message : ""}
-            className="bg-white"
+            sx={{ mb: 2 }}
           />
         )}
       />
@@ -72,7 +80,14 @@ const EmployeeForm = (props: IPropType) => {
         type="submit"
         fullWidth
         variant="contained"
-        className="mt-3 mb-2 bg-blue-500 hover:bg-blue-700 text-white"
+        sx={{
+          mt: 2,
+          mb: 1,
+          bgcolor: "primary.main",
+          "&:hover": {
+            bgcolor: "primary.dark",
+          },
+        }}
       >
         Submit
       </Button>

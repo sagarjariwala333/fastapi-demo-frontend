@@ -1,4 +1,3 @@
-// EmployeeTable.tsx
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -22,19 +21,50 @@ const EmployeeTaskTable = (props: EmployeeTaskTableProps) => {
   const { employeeTasks } = props;
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer
+      component={Paper}
+      sx={{ mt: 4, boxShadow: 3, borderRadius: 2 }}
+    >
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Employee Name</TableCell>
-            <TableCell>Task Name</TableCell>
+            <TableCell
+              sx={{
+                fontWeight: "bold",
+                backgroundColor: "primary.main",
+                color: "white",
+                fontSize: "1.2rem",
+              }}
+            >
+              ID
+            </TableCell>
+            <TableCell
+              sx={{
+                fontWeight: "bold",
+                backgroundColor: "primary.main",
+                color: "white",
+                fontSize: "1.2rem",
+              }}
+            >
+              Employee Name
+            </TableCell>
+            <TableCell
+              sx={{
+                fontWeight: "bold",
+                backgroundColor: "primary.main",
+                color: "white",
+                fontSize: "1.2rem",
+              }}
+            >
+              Task Name
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {employeeTasks?.map((employeeTask, index) => (
             <TableRow
               key={`${index}${employeeTask.task}${employeeTask.employee}`}
+              sx={{ "&:nth-of-type(odd)": { backgroundColor: "action.hover" } }}
             >
               <TableCell>{index + 1}</TableCell>
               <TableCell>{employeeTask.employee}</TableCell>
